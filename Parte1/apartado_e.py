@@ -36,7 +36,7 @@ def abandono(n: int, regla: Callable[[float], int], distribucion: str) -> None:
             x = actualizacion_opinion(x, contenido)
 
         cuenta_abandonos.append(c)
-    columnas:list[int]=[0,10,20,30,40,50,60,70,80,90,100, 110]
+    columnas:list[int]=[0,10,20,30,40,50,60,70,80,90,100]
     plt.hist(cuenta_abandonos, bins=columnas, edgecolor="black", alpha=0.7)
     plt.xlabel("Número de contenidos consumidos antes de abandonar")
     plt.ylabel("Número de usuarios")
@@ -66,31 +66,17 @@ def R3(x: float) -> int:
         return -1 
     else: 
         return 1
-    
-def CompromisoBalanceado(x: float) -> int:
-    """ Regla de Compromiso Balanceado (R4): 
-        - Mayormente contenido alineado
-        - Pequeña posibilidad de contenido contrario (mayor para opiniones extremas)
-    """
-    prob_izq = (1 - x) / 2 + (0.2 * (1 - abs(x))) / 2
-    return -1 if np.random.rand() < prob_izq else 1
-
 
 def main() -> None:
 
     N = 10000
 
-    abandono(N,CompromisoBalanceado,'S1')
-    abandono(N,CompromisoBalanceado,'S2')
-
-    '''
     abandono(N, R1, 'S1')
     abandono(N, R2, 'S1')
     abandono(N, R3, 'S1')
     abandono(N, R1, 'S2')
     abandono(N, R2, 'S2')
     abandono(N, R3, 'S2')
-    '''
 
 if __name__ == '__main__':
     main()
