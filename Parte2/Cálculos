@@ -1,7 +1,0 @@
-Segunda Parte del trabajo:
-
--A partir de la pregunta b)  sabemos que sgn(delta_t)=0.
--En R2, la esperanza de las opiniones políticas iniciales es que sean de centro (\mu_t=0), 
-es decir que la reparticiones de las opiniones políticas es simétrica (Por ejemplo: debería haber el mismo número de personas con opiniones de izquierdas en -0,7 como de derechas en 0,7, también se puede justificar con la pregunta c) 
-porque la distribución de las opiniones después de infinitos videos es N(0,sigma^2=1 ), 
-y la esperanza de la opinión siguiente (1 paso/video politico o bien de derechas o de izquierdas) será de centro también (no cambia).
